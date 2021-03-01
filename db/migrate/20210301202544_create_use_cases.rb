@@ -4,6 +4,8 @@ class CreateUseCases < ActiveRecord::Migration[6.1]
       t.text :description
       t.string :title
       t.string :category
+      t.references :python
+      t.references :ruby
 
       t.timestamps
     end

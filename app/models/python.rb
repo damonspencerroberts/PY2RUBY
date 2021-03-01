@@ -1,3 +1,3 @@
 class Python < ApplicationRecord
-  belongs_to :use_case
+  has_many :use_cases
 end

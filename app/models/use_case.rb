@@ -1,4 +1,4 @@
 class UseCase < ApplicationRecord
-  has_many :pythons
-  has_many :rubies
+  belongs_to :python
+  belongs_to :ruby
 end

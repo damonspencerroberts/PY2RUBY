@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_202655) do
+ActiveRecord::Schema.define(version: 2021_03_01_204346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,29 +18,28 @@ ActiveRecord::Schema.define(version: 2021_03_01_202655) do
   create_table "pythons", force: :cascade do |t|
     t.string "code"
     t.string "documentation_url"
-    t.bigint "use_case_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["use_case_id"], name: "index_pythons_on_use_case_id"
   end
 
   create_table "rubies", force: :cascade do |t|
     t.string "code"
     t.string "documentation_url"
-    t.bigint "use_case_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["use_case_id"], name: "index_rubies_on_use_case_id"
   end
 
   create_table "use_cases", force: :cascade do |t|
     t.text "description"
     t.string "title"
     t.string "category"
+    t.bigint "python_id"
+    t.bigint "ruby_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "output"
+    t.index ["python_id"], name: "index_use_cases_on_python_id"
+    t.index ["ruby_id"], name: "index_use_cases_on_ruby_id"
   end
 
-  add_foreign_key "pythons", "use_cases"
-  add_foreign_key "rubies", "use_cases"
 end

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="card">
+    <div>
+      <h1><%= @use_case.title %></h1>
+    </div>
+    <div class="card__sub-info">
+      <div class="card__category">
+        <%= @use_case.category.upcase %>
+      </div>
+      <div>
+        <p>Last updated <%= @use_case.updated_at.strftime('%a, %e %b %y') %></p>
+      </div>
+    </div>
+    <div class="card__description">
+      <p>
+        <%= @use_case.description %>
+      </p>
+    </div>
+    <div class="card__snippet">
+      <div class="card__snippet--code">
+        <code>
+          <%= @use_case.ruby.code %>
+        </code>
+      </div>
+      <div class="card__snippet--btn">
+        <a href="<% @use_case.ruby.documentation_url %>">Learn More</a>
+      </div>
+    </div>
+    <div class="card__snippet">
+      <div class="card__snippet--code">
+        <code>
+          <%= @use_case.python.code %>
+        </code>
+      </div>
+      <div class="card__snippet--btn">
+        <a href="<% @use_case.python.documentation_url %>">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
