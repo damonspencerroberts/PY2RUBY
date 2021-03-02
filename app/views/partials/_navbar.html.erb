@@ -3,8 +3,12 @@
     <a href="/" class="navbar__link--link navbar__link--link--active m-2">Home</a>
     <a href="/use_cases" class="navbar__link--link m-2">Code</a>
   </div>
-  <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-success ml-2" type="submit">Search</button>
-  </form>
+  <%= form_tag search_results_path, class: "d-flex", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find some code"
+    %>
+    <%= submit_tag "Search", class: "btn btn-success ml-2" %>
+  <% end %>
 </div>
