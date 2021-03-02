@@ -40,6 +40,22 @@
     color: $gray;
     font-weight: 300;
   }
+
+  &__output--code {
+    background-color: $light-gray;
+    border-radius: $border-radius;
+    padding: 2rem;
+    position: relative;
+  }
+
+  &__output--code--def {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: black;
+    font-weight: 300;
+  }
   
   &__buttons {
     display: flex;

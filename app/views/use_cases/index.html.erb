@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="index-use">
+    <div class="index-use__header">
+      <h1>All code.</h1>
+      <p>Code cases (<%= @use_cases.size %>)</p>
+    </div>
+    <% @use_cases.each do |caser| %>
+      <%= link_to use_case_path(caser) do %>
+        <div class="card-product my-3">
+          <div class="card-product-infos">
+            <h2><%= caser.title %></h2>
+            <p><%= caser.description %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

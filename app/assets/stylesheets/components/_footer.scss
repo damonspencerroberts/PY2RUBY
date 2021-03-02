@@ -1,0 +1,33 @@
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  padding: 0px 4rem;
+  color: rgba(0,0,0,0.3);
+  font-size: .8rem;
+
+  &-links {
+    display: flex;
+    align-items: center;
+  }
+
+  &-links a {
+    color: black;
+    opacity: 0.15;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0 .6rem;
+  }
+
+  &-links a:hover {
+    opacity: 1;
+  }
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}

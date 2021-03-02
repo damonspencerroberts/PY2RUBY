@@ -18,18 +18,34 @@
     </div>
     <div class="card__snippet py-2">
       <div class="card__snippet--code">
-        <code>
-          <%= @use_case.ruby.code %>
-        </code>
+        <% @use_case.ruby.code.each do |rb| %>
+          <p>
+            <code>
+              <%= rb %>
+            </code>
+          </p>
+        <% end %>
         <p class="card__snippet--code--def">Ruby</p>
       </div>
     </div>
-    <div class="card__snippet">
+    <div class="card__snippet py-2">
       <div class="card__snippet--code">
-        <code>
-          <%= @use_case.python.code %>
-        </code>
+        <% @use_case.python.code.each do |py| %>
+          <p>
+            <code>
+              <%= py %>
+            </code>
+          </p>
+        <% end %>
         <p class="card__snippet--code--def">Python</p>
+      </div>
+    </div>
+    <div class="card__output">
+      <div class="card__output--code">
+        <code>
+          <%= @use_case.output %>
+        </code>
+        <p class="card__output--code--def">Output</p>
       </div>
     </div>
     <div class="card__buttons my-4">
