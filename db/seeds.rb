@@ -50,6 +50,46 @@ python_cases = [
   {
     code: ["my_list = ['The', 'tall', 'man', 'walked', 'on', 'the', 'moon']", "''.join(my_list)"],
     documentation_url: "https://www.programiz.com/python-programming/methods/string/join"
+  },
+  {
+    code: ["my_word = 'campfire'", "my_word.upper()"],
+    documentation_url: "https://www.programiz.com/python-programming/methods/string/upper"
+  },
+  {
+    code: ["my_word = 'camPFIre'", "my_word.lower()"],
+    documentation_url: "https://www.programiz.com/python-programming/methods/string/lower"
+  },
+  {
+    code: ["my_word = 'campfire'", "my_word.capitalize()"],
+    documentation_url: "https://www.geeksforgeeks.org/string-capitalize-python/"
+  },
+  {
+    code: ["import re", "my_word = 'campfire123'", "re.sub('123', '456', my_word)"],
+    documentation_url: "https://stackoverflow.com/questions/38773379/simplest-python-equivalent-to-rs-gsub"
+  },
+  {
+    code: ["'campfire'[::-1]"],
+    documentation_url: "https://realpython.com/lessons/indexing-and-slicing/"
+  },
+  {
+    code: ["str(12345)"],
+    documentation_url: "https://www.programiz.com/python-programming/methods/built-in/str"
+  },
+  {
+    code: ["int('12345')"],
+    documentation_url: "https://www.programiz.com/python-programming/methods/built-in/int"
+  },
+  {
+    code: ["new_word = 'hello'", "current_word = 'world'", "new_word + ' ' + current_word"],
+    documentation_url: "https://stackoverflow.com/questions/10059554/inserting-characters-at-the-start-and-end-of-a-string"
+  },
+  {
+    code: ["print('Hello World')"],
+    documentation_url: "https://www.programiz.com/python-programming/methods/built-in/print"
+  },
+  {
+    code: ['age = 24', 'f"I am {age} years old"'],
+    documentation_url: "https://realpython.com/python-f-strings/"
   }
 ]
 
@@ -93,6 +133,46 @@ ruby_cases = [
   {
     code: ["my_array = ['The', 'tall', 'man', 'walked', 'on', 'the', 'moon']", "my_array.join(' ')"],
     documentation_url: "https://www.geeksforgeeks.org/ruby-array-class-join-function/"
+  },
+  {
+    code: ["my_word = 'campfire'", "my_word.upcase"],
+    documentation_url: "https://apidock.com/ruby/String/upcase"
+  },
+  {
+    code: ["my_word = 'camPFIre'", "my_word.downcase"],
+    documentation_url: "https://apidock.com/ruby/String/downcase"
+  },
+  {
+    code: ["my_word = 'campfire'", "my_word.capitalize"],
+    documentation_url: "https://apidock.com/ruby/String/capitalize"
+  },
+  {
+    code: ["my_word = 'campfire123'", "my_word.gsub('123', '456')"],
+    documentation_url: "https://apidock.com/ruby/String/gsub"
+  },
+  {
+    code: ["'campfire'.reverse"],
+    documentation_url: "https://apidock.com/ruby/String/reverse"
+  },
+  {
+    code: ["12345.to_s"],
+    documentation_url: "https://apidock.com/ruby/String/to_s"
+  },
+  {
+    code: ["'12345'.to_i"],
+    documentation_url: "https://apidock.com/ruby/String/to_i"
+  },
+  {
+    code: ["' world'.prepend('hello')"],
+    documentation_url: "https://apidock.com/ruby/String/prepend"
+  },
+  {
+    code: ["puts 'Hello World'"],
+    documentation_url: "https://apidock.com/ruby/IO/puts"
+  },
+  {
+    code: ['age = 24', '"I am #{age} years old"'],
+    documentation_url: "https://www.studytonight.com/ruby/interpolation-in-ruby"
   }
 ]
 
@@ -156,6 +236,66 @@ use_cases = [
     description: "This is an array method/function will take an array and join it by the paramater set.",
     category: "array",
     output: "The tall man walked on the moon"
+  },
+  {
+    title: "String uppercase method",
+    description: "This method converts all lowercase characters in a string into uppercase characters and returns it.",
+    category: "string",
+    output: "CAMPFIRE"
+  },
+  {
+    title: "String lowercase/downcase method",
+    description: "This method converts all characters in a string into lowercase characters and returns it.",
+    category: "string",
+    output: "campfire"
+  },
+  {
+    title: "String capitalize method",
+    description: "This method returns the inputed string as capitalized.",
+    category: "string",
+    output: "Campfire"
+  },
+  {
+    title: "String sub/gsub method",
+    description: "Returns a copy of the inputed string with all occurrences of pattern substituted for the second argument.",
+    category: "string",
+    output: "campfire456"
+  },
+  {
+    title: "String reverse method",
+    description: "Returns a new string with the characters from the string in reverse order.",
+    category: "string",
+    output: "erifpmac"
+  },
+  {
+    title: "Convert to string method",
+    description: "If called on a subclass of String, converts the receiver to a String object.",
+    category: "string",
+    output: "'12345'"
+  },
+  {
+    title: "Convert to integer method.",
+    description: "Returns the result of interpreting leading characters in str as an integer base base (between 2 and 36).",
+    category: "string",
+    output: "12345"
+  },
+  {
+    title: "Prepend string to another string",
+    description: "Add one instance of a string to the the beginning of another string.",
+    category: "string",
+    output: "hello world"
+  },
+  {
+    title: "Print/puts some sort of object.",
+    description: "Prints element to the console.",
+    category: "string",
+    output: "Hello World"
+  },
+  {
+    title: "Interpolation of a string",
+    description: "Can connect variables and join them inside a string.",
+    category: "string",
+    output: "I am 24 years old."
   }
 ]
 
