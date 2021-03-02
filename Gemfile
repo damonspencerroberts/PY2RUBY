@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
+gem 'pg_search', '~> 2.3.0'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.1.0'
 
