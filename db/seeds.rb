@@ -93,6 +93,8 @@ python_cases = [
   }
 ]
 
+puts "Python Size: #{python_cases.size}"
+
 ruby_cases = [
   {
     code: ["'robotics'.length()"],
@@ -175,6 +177,8 @@ ruby_cases = [
     documentation_url: "https://www.studytonight.com/ruby/interpolation-in-ruby"
   }
 ]
+
+puts "Ruby Size: #{ruby_cases.size}"
 
 use_cases = [
   {
@@ -298,6 +302,8 @@ use_cases = [
     output: "I am 24 years old."
   }
 ]
+
+puts "UseCase Size: #{use_cases.size}"
 
 use_cases.each_with_index do |use_case, index|
   py = Python.create(python_cases[index])
