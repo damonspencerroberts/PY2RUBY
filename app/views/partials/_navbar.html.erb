@@ -1,8 +1,8 @@
 <div class="navbar d-flex align-items-center justify-content-between py-3">
   <div class="navbar__links">
     <%= image_tag asset_path('logo.png'), class: "mr-2 logo" %>
-    <a href="/" class="mr-2 navbar__link--link navbar__link--link--active m-2">Home</a>
-    <a href="/use_cases" class="mr-2 navbar__link--link m-2">Code</a>
+    <a href="/" class="mr-2 navbar__link--link m-2 <%= current_class?(root_path) %>">Home</a>
+    <a href="/use_cases" class="mr-2 navbar__link--link m-2 <%= current_class?(use_cases_path) %>">Code</a>
   </div>
   <%= form_tag search_results_path, class: "d-flex", method: :get do %>
     <%= text_field_tag :query,
