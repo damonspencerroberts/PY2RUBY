@@ -2,7 +2,7 @@
   <div class="index-use">
     <div class="index-use__header">
       <h1>Search results for <%= @query %></h1>
-      <p>Code cases found (<%= @use_cases.size %>)</p>
+      <p>Code cases found (<%= @use_cases_total %>)</p>
     </div>
     <% @use_cases.each do |caser| %>
       <%= link_to use_case_path(caser) do %>
@@ -14,5 +14,8 @@
         </div>
       <% end %>
     <% end %>
+    <div class="flickr_pagination">
+      <%= will_paginate @use_cases, :container => false %>
+    </div>
   </div>
 </div>

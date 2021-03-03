@@ -90,6 +90,26 @@ python_cases = [
   {
     code: ['age = 24', 'f"I am {age} years old"'],
     documentation_url: "https://realpython.com/python-f-strings/"
+  },
+  {
+    code: ['my_num = 24', 'my_num % 2 == 0'],
+    documentation_url: "https://www.programiz.com/python-programming/examples/odd-even"
+  },
+  {
+    code: ['my_num = 25', 'my_num % 2 != 0'],
+    documentation_url: "https://www.programiz.com/python-programming/examples/odd-even"
+  },
+  {
+    code: ['my_num = -5', 'abs(my_num)'],
+    documentation_url: "https://www.programiz.com/python-programming/methods/built-in/abs"
+  },
+  {
+    code: ['import math', 'my_num = 5.7', 'math.ceil(my_num)'],
+    documentation_url: "https://www.geeksforgeeks.org/floor-ceil-function-python/"
+  },
+  {
+    code: ['import math', 'my_num = 5.7', 'math.floor(my_num)'],
+    documentation_url: "https://www.geeksforgeeks.org/floor-ceil-function-python/"
   }
 ]
 
@@ -175,6 +195,26 @@ ruby_cases = [
   {
     code: ['age = 24', '"I am #{age} years old"'],
     documentation_url: "https://www.studytonight.com/ruby/interpolation-in-ruby"
+  },
+  {
+    code: ['my_num = 24', 'my_num.even?'],
+    documentation_url: "https://www.geeksforgeeks.org/ruby-integer-even-function-with-example/"
+  },
+  {
+    code: ['my_num = 25', 'my_num.odd?'],
+    documentation_url: "https://www.geeksforgeeks.org/ruby-integer-odd-function-with-example/"
+  },
+  {
+    code: ['my_num = -5', 'my_num.abs'],
+    documentation_url: "https://www.geeksforgeeks.org/ruby-integer-abs-function-with-example/"
+  },
+  {
+    code: ['my_num = 5.7', 'my_num.ceil'],
+    documentation_url: "https://stackoverflow.com/questions/39971830/ruby-ceil-and-floor"
+  },
+  {
+    code: ['my_num = 5.7', 'my_num.floor'],
+    documentation_url: "https://stackoverflow.com/questions/39971830/ruby-ceil-and-floor"
   }
 ]
 
@@ -300,6 +340,36 @@ use_cases = [
     description: "Can connect variables and join them inside a string.",
     category: "string",
     output: "I am 24 years old."
+  },
+  {
+    title: "Check if a number is even",
+    description: "Returns true if a the inputed number is even, otherwise returns false.",
+    category: "integer",
+    output: "True"
+  },
+  {
+    title: "Check if a number is odd",
+    description: "Returns true if a the inputed number is odd, otherwise returns false.",
+    category: "integer",
+    output: "True"
+  },
+  {
+    title: "Find the absolute value of a number",
+    description: "Returns the absolute value or distance from zero of the inputed number.",
+    category: "integer",
+    output: "5"
+  },
+  {
+    title: "Find the ceiling/closest rounded up integer",
+    description: "Returns the closest rounded up integer from the inputed float (decimal).",
+    category: "integer",
+    output: "6"
+  },
+  {
+    title: "Find the floor/closest rounded down integer",
+    description: "Returns the closest rounded down integer from the inputed float (decimal).",
+    category: "integer",
+    output: "5"
   }
 ]
 
@@ -313,3 +383,11 @@ use_cases.each_with_index do |use_case, index|
   new_case.ruby = rb
   new_case.save
 end
+
+[20,10,4].each do |id|
+  cur = UseCase.find(id)
+  cur.update(popular: true)
+  cur.save
+end
+
+puts "Popular Cases: #{UseCase.where(popular: true).size}"
