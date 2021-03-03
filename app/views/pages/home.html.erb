@@ -1,20 +1,87 @@
 <div class="container">
   <div class="home">
-    <div class="home__header">
-      <h1 class="my-4">
-          <span id="banner-typed-text"></span>
-      </h1>
-      <h3>Find up to date snippets for translating Ruby to Python.</h3>
+    <div class="mb-5">
+      <div class="home__header">
+        <h1 class="my-4">
+            <span id="banner-typed-text"></span>
+        </h1>
+        <h3>Find up to date snippets for translating Ruby to Python.</h3>
+      </div>
+      <div class="home__search">
+        <%= form_tag search_results_path, class: "d-flex", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find some code"
+          %>
+          <%= submit_tag "Search", class: "btn btn-success ml-2" %>
+        <% end %>
+      </div>
     </div>
-    <div class="home__search">
-      <%= form_tag search_results_path, class: "d-flex", method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find some code"
-        %>
-        <%= submit_tag "Search", class: "btn btn-success ml-2" %>
+    <hr class="shadow-sm">
+    <div class="container my-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <h3>Popular code cases</h3>
+      </div>
+      <% @populars.each do |caser| %>
+        <div class="card card-home-container my-5">
+          <div class="card__title py-2">
+            <h1><%= caser.title %></h1>
+          </div>
+          <div class="card__sub-info py-2">
+            <div class="card__sub-info--category">
+              <%= caser.category.upcase %>
+            </div>
+            <div class="card__sub-info--update">
+              <p>Last updated <%= caser.updated_at.strftime('%a, %e %b %y') %></p>
+            </div>
+          </div>
+          <div class="card__description py-2">
+            <p>
+              <%= caser.description %>
+            </p>
+          </div>
+          <div class="card__snippet py-2">
+            <div class="card__snippet--code">
+              <% caser.ruby.code.each do |rb| %>
+                <p>
+                  <code>
+                    <%= rb %>
+                  </code>
+                </p>
+              <% end %>
+              <p class="card__snippet--code--def">Ruby</p>
+            </div>
+          </div>
+          <div class="card__snippet py-2">
+            <div class="card__snippet--code">
+              <% caser.python.code.each do |py| %>
+                <p>
+                  <code>
+                    <%= py %>
+                  </code>
+                </p>
+              <% end %>
+              <p class="card__snippet--code--def">Python</p>
+            </div>
+          </div>
+          <div class="card__output">
+            <div class="card__output--code">
+              <code>
+                <%= caser.output %>
+              </code>
+              <p class="card__output--code--def">Output</p>
+            </div>
+          </div>
+          <div class="card__buttons my-4">
+            <a class="card__buttons--btn card__buttons--btn--green m-2 w-50" target="_blank" href="<%= caser.ruby.documentation_url %>">Ruby: Learn More</a>
+            <a class="card__buttons--btn card__buttons--btn--green m-2 w-50" target="_blank" href="<%= caser.python.documentation_url %>">Python: Learn More</a>
+          </div>
+        </div>
       <% end %>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <%= link_to "See more", use_cases_path, class: "btn btn-success w-50" %>
     </div>
   </div>
 </div>

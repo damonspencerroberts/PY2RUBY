@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @populars = UseCase.where(popular: true)
   end
 
   def search
