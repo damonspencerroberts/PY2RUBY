@@ -2,9 +2,6 @@
 @import "home";
 @import "index-use-case";
 
-* {
-  color: $blue;
-}
 
 html {
   font-size: 16px;
@@ -12,6 +9,18 @@ html {
 
 body {
   font-family: $body-font;
+}
+
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.normal-container {
+  background-color: $bg-color !important;
+  color: $body-text !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

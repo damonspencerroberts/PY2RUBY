@@ -1,0 +1,100 @@
+.night-mode {
+  background-color: $night-mode-bg !important;
+  color: $night-mode-text !important;
+
+  .flickr_pagination .disabled {
+    color: $night-mode-disabled;
+  }
+  
+  .flickr_pagination .current {
+    color: $night-mode-green;
+  }
+  
+  .flickr_pagination a {
+    border: 1px solid $night-mode-disabled;
+    color: $night-mode-text;
+  }
+  
+  .flickr_pagination a:hover,
+  .flickr_pagination a:focus {
+    border-color: $night-mode-text;
+    background: $night-mode-text;
+    color: $night-mode-bg;
+  }
+
+  .navbar {
+    background-color: $night-mode-text;
+  
+    &__link--link {
+      color: $night-mode-bg;
+      border-bottom: 2px solid rgba($night-mode-bg, 0.0);
+    }
+  
+    &__link--link:hover {
+      color: $night-mode-bg;
+      border-bottom: 2px solid rgba($night-mode-bg, 1);
+    }
+  
+    &__link--link--active {
+      color: $night-mode-bg;
+      border-bottom: 2px solid rgba($night-mode-bg, 1);
+    }
+  }
+
+  .footer {
+    background: $night-mode-text;
+    color: $night-mode-disabled;
+  
+    &-links a {
+      color: $night-mode-bg;
+    }
+  }
+
+  .card {
+    background-color: $night-mode-disabled;
+    color: $night-mode-bg;
+
+    &__sub-info--category {
+      background-color: $night-mode-text;
+    }
+    
+    &__sub-info--update p {
+      color: $night-mode-disabled;
+    }
+    
+    &__snippet--code {
+      background-color: $night-mode-text;
+    }
+  
+    &__snippet--code--def {
+      color: $night-mode-disabled;
+    }
+  
+    &__output--code {
+      background-color: $night-mode-bg;
+    }
+  
+    &__output--code--def {
+      color: $night-mode-text;
+    }
+  
+    &__buttons--btn:link,
+    &__buttons--btn:visited {
+      background-color: $night-mode-green;
+      color: $night-mode-text;
+    }
+  
+    
+    &__buttons--btn--green {
+      background-color: $night-mode-green;
+    }
+    
+    &__buttons--btn--green::after {
+      background-color: $night-mode-green;
+    }
+  }
+
+  .card-product {
+    background: $night-mode-text;
+  }
+}
