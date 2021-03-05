@@ -110,6 +110,10 @@ python_cases = [
   {
     code: ['import math', 'my_num = 5.7', 'math.floor(my_num)'],
     documentation_url: "https://www.geeksforgeeks.org/floor-ceil-function-python/"
+  },
+  {
+    code: ['x = 7', 'if x > 3:', "\treturn 'Greater than 3'", 'else:', "\treturn 'Less that 3'"],
+    documentation_url: "https://www.programiz.com/python-programming/if-elif-else"
   }
 ]
 
@@ -215,6 +219,10 @@ ruby_cases = [
   {
     code: ['my_num = 5.7', 'my_num.floor'],
     documentation_url: "https://stackoverflow.com/questions/39971830/ruby-ceil-and-floor"
+  },
+  {
+    code: ['x = 7', 'if x > 3', "\t'Greater than 3'", 'else', "\t'Less than 3'", 'end'],
+    documentation_url: "https://www.educative.io/edpresso/how-to-write-an-if-else-condition-in-ruby"
   }
 ]
 
@@ -370,6 +378,12 @@ use_cases = [
     description: "Returns the closest rounded down integer from the inputed float (decimal).",
     category: "integer",
     output: "5"
+  },
+  {
+    title: "Write a conditional statement",
+    description: "Uses the if else statement to return an element if a condition is met of not. (Tabs are required for python.)",
+    category: "conditional",
+    output: "Greater than 3"
   }
 ]
 
