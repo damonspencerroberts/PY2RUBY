@@ -1,0 +1,25 @@
+pre {
+  text-align: left;
+  background: #2e2a2a;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1rem 0.4rem;
+  display: block;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.python-style {
+  border-left: 3px solid $green;
+  color: $green;
+}
+
+.ruby-style {
+  border-left: 3px solid $pink;
+  color: $pink;
+}
