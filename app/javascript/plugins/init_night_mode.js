@@ -8,7 +8,6 @@ const initNightMode = () => {
     page.classList.toggle('normal-container');
     page.classList.toggle('night-mode')
     night = !night;
-    console.log(night);
   });
 }
 

@@ -71,11 +71,11 @@
     }
   
     &__output--code {
-      background-color: $night-mode-bg;
+      background-color: $night-mode-text;
     }
   
     &__output--code--def {
-      color: $night-mode-text;
+      color: $night-mode-bg;
     }
   
     &__buttons--btn:link,
