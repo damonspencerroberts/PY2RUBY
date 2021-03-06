@@ -10,6 +10,8 @@ Python.destroy_all
 Ruby.destroy_all
 UseCase.destroy_all
 
+start = Time.now
+
 python_cases = [
   {
     code: ["len('robotics')"],
@@ -112,8 +114,47 @@ python_cases = [
     documentation_url: "https://www.geeksforgeeks.org/floor-ceil-function-python/"
   },
   {
-    code: ['x = 7', 'if x > 3:', "\treturn 'Greater than 3'", 'else:', "\treturn 'Less that 3'"],
+    code: [
+      'x = 7', 
+      'if x > 3:', 
+      "\treturn 'Greater than 3'", 
+      'else:', 
+      "\treturn 'Less that 3'"
+    ],
     documentation_url: "https://www.programiz.com/python-programming/if-elif-else"
+  },
+  {
+    code: [
+      'x = 2', 
+      'if x > 3:', 
+      "\treturn 'Greater than 3'", 
+      'elif x >= 0:', 
+      "\treturn 'Between 0 and 3'", 'else:', 
+      "\treturn 'Less that 3'"
+    ],
+    documentation_url: "https://www.programiz.com/python-programming/if-elif-else"
+  },
+  {
+    code: [
+      'def add(a, b):',
+      "\treturn a + b",
+      'add(5, 10)'
+    ],
+    documentation_url: "https://www.programiz.com/python-programming/function"
+  },
+  {
+    code: [
+      'my_array = [1, 1, 2, 3, 4, 5, 5]',
+      'list(set(my_array))'
+    ],
+    documentation_url: "https://www.geeksforgeeks.org/python-set-method/"
+  },
+  {
+    code: [
+      'x = 33',
+      'int(bin(x)[2:])'
+    ],
+    documentation_url: "https://stackoverflow.com/questions/3528146/convert-decimal-to-binary-in-python"
   }
 ]
 
@@ -221,12 +262,57 @@ ruby_cases = [
     documentation_url: "https://stackoverflow.com/questions/39971830/ruby-ceil-and-floor"
   },
   {
-    code: ['x = 7', 'if x > 3', "\t'Greater than 3'", 'else', "\t'Less than 3'", 'end'],
+    code: [
+      'x = 7', 
+      'if x > 3', 
+      "\t'Greater than 3'", 
+      'else', 
+      "\t'Less than 3'", 
+      'end'
+    ],
     documentation_url: "https://www.educative.io/edpresso/how-to-write-an-if-else-condition-in-ruby"
+  },
+  {
+    code: [
+      'x = 2', 
+      'if x > 3', 
+      "\t'Greater than 3'", 
+      'elsif x >= 0', 
+      "\t'Between 0 and 3'", 
+      'else', 
+      "\t'Less than 0'", 
+      'end'
+    ],
+    documentation_url: "https://www.educative.io/edpresso/how-to-write-an-if-else-condition-in-ruby"
+  },
+  {
+    code: [
+      'def add(a, b)',
+      "\ta + b",
+      'end',
+      'add(5, 10)'
+    ],
+    documentation_url: "https://www.howtogeek.com/howto/programming/ruby/ruby-function-method-syntax/"
+  },
+  {
+    code: [
+      'my_array = [1, 1, 2, 3, 4, 5, 5]',
+      'my_array.uniq'
+    ],
+    documentation_url: "https://www.rubyguides.com/2019/08/ruby-uniq-method/"
+  },
+  {
+    code: [
+      'x = 33',
+      'x.to_s(2)'
+    ],
+    documentation_url: "https://stackoverflow.com/questions/2339695/how-to-convert-a-string-or-integer-to-binary-in-ruby"
   }
 ]
 
 puts "Ruby Size: #{ruby_cases.size}"
+
+py_tab = "(Tabs are required for python.)"
 
 use_cases = [
   {
@@ -381,9 +467,33 @@ use_cases = [
   },
   {
     title: "Write a conditional statement",
-    description: "Uses the if else statement to return an element if a condition is met of not. (Tabs are required for python.)",
+    description: "Uses the if else statement to return an element if a condition is met of not. #{py_tab}",
     category: "conditional",
     output: "Greater than 3"
+  },
+  {
+    title: "Write a conditional statement with mulitple conditions",
+    description: "Conditional statement with multiple conditions to return an element if one of the conditions is met. #{py_tab}",
+    category: "conditional",
+    output: "Between 0 and 3"
+  },
+  {
+    title: "Writing a simple function for addition",
+    description: "How to write a simple function that takes two arguments a and b and returns the sum of them. #{py_tab}",
+    category: "function",
+    output: "15"
+  },
+  {
+    title: "How to remove duplicates from an array",
+    description: "This method takes an argument of an array/list and returns the array while removing all duplicate records.",
+    category: "array",
+    output: "[1, 2, 3, 4, 5]"
+  },
+  {
+    title: "How to convert an integer to binary",
+    description: "This method takes an argument of an integer and returns its binary value.",
+    category: "integer",
+    output: "100001"
   }
 ]
 
@@ -398,10 +508,92 @@ use_cases.each_with_index do |use_case, index|
   new_case.save
 end
 
-[26,10,4].each do |id|
+[28, 26, 10].each do |id|
   cur = UseCase.find(id)
   cur.update(popular: true)
   cur.save
 end
-
 puts "Popular Cases: #{UseCase.where(popular: true).size}"
+
+# {
+#   title: "",
+#   author: "",
+#   url: "",
+#   image_url: "",
+#   time_length: "",
+#   date: "",
+#   category: "",
+#   description: ""
+# }
+
+article_cases = [
+  {
+    title: "5 Ruby on Rails Tips You Probably Don’t Know",
+    author: "Igor Petrov",
+    url: "https://medium.com/hackernoon/5-ruby-on-rails-tips-you-probably-dont-know-8b80b4a0890f",
+    image_url: "https://miro.medium.com/fit/c/96/96/0*iysI2X3ZkWgelRhQ.",
+    time_length: "3 min read",
+    date: "Nov 14, 2017",
+    category: "Ruby",
+    description: "Since I started working with Ruby on Rails, and after several years of using it passed by, I can’t stop wondering when I discover something new in Ruby world. Yes, this is how it works — you know, Ruby is for developer happiness (beyond this there are some other principles) and each year of using it and finding out new stuff supports this feeling inside."
+  },
+  {
+    title: "Solving Einstein’s Riddle with Ruby",
+    author: "Sean Handley",
+    url: "https://sean-handley.medium.com/solving-einstein-s-riddle-with-ruby-e78ba9ebabe",
+    image_url: "https://miro.medium.com/fit/c/56/56/1*mOkukxM6P_b2_umuLn0l1A.jpeg",
+    time_length: "7 min read",
+    date: "Nov 15, 2015",
+    category: "Ruby",
+    description: "Doing the rounds again at the moment is the so-called “Einstein’s Riddle”, a puzzle he allegedly described as being too difficult for 98% of the population to solve. Also known as the Zebra puzzle, it involves deducing the nationality of inhabitants of a street of houses, the colour of those houses, and which drink, cigar and pet the occupant prefers. There are five houses in five different colours in a row. In each house lives a person with a different nationality. The five owners drink a certain type of beverage, smoke a certain brand of cigar and keep a certain pet."
+  },
+  {
+    title: "NodeJS vs Ruby on Rails comparison 2017. Which is the best for web development?",
+    author: "TechMagic",
+    url: "https://medium.com/@TechMagic/nodejs-vs-ruby-on-rails-comparison-2017-which-is-the-best-for-web-development-9aae7a3f08bf",
+    image_url: "https://miro.medium.com/fit/c/56/56/1*EiLuTrUpSTkBbA3LagKKIQ.jpeg",
+    time_length: "4 min read",
+    date: "Feb 3, 2017",
+    category: "Ruby",
+    description: "It’s hard for a startup to choose the right language for development. One of the biggest fight in development is between Node.JS and Ruby on Rails. So, who is the winner in this fight? The King is dead, long live The King! If you asked this question 5 years ago, it would be definitely Ruby, but time is changing and we have a new leader. Let’s have a look at Google trends"
+  },
+  {
+    title: "How to develop a social network using Ruby on Rails",
+    author: "Sudharsanan Muralidharan",
+    url: "https://medium.com/rails-ember-beyond/how-to-build-a-social-network-using-rails-eb31da569233",
+    image_url: "https://miro.medium.com/fit/c/96/96/1*jeBbZhFK4iY2WcSaAqnhwA.jpeg",
+    time_length: "8 min read",
+    date: "Jul 23, 2015",
+    category: "Ruby",
+    description: "I am a Rails fanboy. In my opinion Ruby on Rails is one of the best web development frameworks ever developed. I have been using Rails for more than a year and it’s quite exciting to work with it. Web development has become so much fun for me because of it. For quite some time I have been thinking of writing a blog post on Rails. I am not writing the usual post on “How to develop a blogging platform under 5 minutes using Rails”. "
+  },
+  {
+    title: "An A-Z of useful Python tricks",
+    author: "Peter Gleeson",
+    url: "https://medium.com/free-code-camp/an-a-z-of-useful-python-tricks-b467524ee747",
+    image_url: "https://miro.medium.com/fit/c/96/96/1*jYH_43uKbwiZhfXddHE1BQ.jpeg",
+    time_length: "9 min read",
+    date: "Aug 28, 2018",
+    category: "Python",
+    description: "Python is one of the world’s most popular, in-demand programming languages. This is for many reasons: it’s easy to learn it’s super versatile it has a huge range of modules and libraries I use Python daily as an integral part of my job as a data scientist. Along the way, I’ve picked up a few useful tricks and tips. Here, I’ve made an attempt at sharing some of them in an A-Z format. Most of these ‘tricks’ are things I’ve used or stumbled upon during my day-to-day work. Some"
+  },
+  {
+    title: "How to build your own AlphaZero AI using Python and Keras",
+    author: "David Foster",
+    url: "https://medium.com/applied-data-science/how-to-build-your-own-alphazero-ai-using-python-and-keras-7f664945c188",
+    image_url: "https://miro.medium.com/fit/c/56/56/1*QqMD1rth7ahcS7Gc415R9w.jpeg",
+    time_length: "11 min read",
+    date: "Jan 26, 2018",
+    category: "Python",
+    description: "In this article I’ll attempt to cover three things: Two reasons why AlphaZero is a massive step forward for Artificial Intelligence How you can build a replica of the AlphaZero methodology to play the game Connect4 How you can adapt the code to plug in other games In March 2016, Deepmind’s AlphaGo beat 18 times world champion Go player Lee Sedol 4–1 in a series watched by over 200 million people. A machine had learnt a super-human strategy for playing Go, a feat previously thought impossible, or at the very least, at least a decade away from being accomplished."
+  }
+]
+
+article_cases.each do |el|
+  new_article = Article.new(el)
+  new_article.save
+end
+puts "Articles length: #{Article.all.size}"
+
+ending = Time.now
+puts "Seed file finished in #{(ending - start).round(2)} seconds"
