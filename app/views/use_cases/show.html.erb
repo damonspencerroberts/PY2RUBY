@@ -1,48 +1,72 @@
-<div class="container ">
+<div class="card-page-container">
   <div class="card card-container">
-    <div class="card__title py-2">
-      <h1><%= @use_case.title %></h1>
-    </div>
-    <div class="card__sub-info py-2">
-      <div class="card__sub-info--category">
-        <%= @use_case.category.upcase %>
-      </div>
-      <div class="card__sub-info--update">
-        <p>Last updated <%= @use_case.updated_at.strftime('%a, %e %b %y') %></p>
-      </div>
-    </div>
-    <div class="card__description py-2">
-      <p>
-        <%= @use_case.description %>
-      </p>
-    </div>
-    <div class="card__snippet py-2">
-      <pre class="ruby-style">
-        <% @use_case.ruby.code.each do |rb| %>
-          <%= sanitize rb %>
+    <div class="m-5">
+      <% if (@use_case.id) - 1 > 0 %>
+        <%= link_to use_case_path(@use_case.id - 1) do %>
+          <i class="fas fa-chevron-left fa-3x card__icon"></i>
         <% end %>
-        <p class="card__snippet--code--def">Ruby</p>
-      </pre>
-    </div>
-    <div class="card__snippet py-2">
-      <pre class="python-style">
-        <% @use_case.python.code.each do |py| %>
-          <%= sanitize py %>
+      <% else %>
+        <%= link_to use_case_path(@use_case_total.size) do %>
+          <i class="fas fa-chevron-left fa-3x card__icon"></i>
         <% end %>
-        <p class="card__snippet--code--def">Python</p>
-      </pre>
+      <% end %>
     </div>
-    <div class="card__output">
-      <div class="card__output--code">
-        <code class="text-primary">
-          <%= @use_case.output %>
-        </code>
-        <p class="card__output--code--def">Output</p>
+    <div class="card-content">
+      <div class="card__title py-2">
+        <h1><%= @use_case.title %></h1>
+      </div>
+      <div class="card__sub-info py-2">
+        <div class="card__sub-info--category">
+          <%= @use_case.category.upcase %>
+        </div>
+        <div class="card__sub-info--update">
+          <p>Last updated <%= @use_case.updated_at.strftime('%a, %e %b %y') %></p>
+        </div>
+      </div>
+      <div class="card__description py-2">
+        <p>
+          <%= @use_case.description %>
+        </p>
+      </div>
+      <div class="card__snippet py-2">
+        <pre class="ruby-style">
+          <% @use_case.ruby.code.each do |rb| %>
+            <%= sanitize rb %>
+          <% end %>
+          <p class="card__snippet--code--def">Ruby</p>
+        </pre>
+      </div>
+      <div class="card__snippet py-2">
+        <pre class="python-style">
+          <% @use_case.python.code.each do |py| %>
+            <%= sanitize py %>
+          <% end %>
+          <p class="card__snippet--code--def">Python</p>
+        </pre>
+      </div>
+      <div class="card__output">
+        <div class="card__output--code">
+          <code class="text-primary">
+            <%= @use_case.output %>
+          </code>
+          <p class="card__output--code--def">Output</p>
+        </div>
+      </div>
+      <div class="card__buttons my-4">
+        <a class="card__buttons--btn card__buttons--btn--green m-2 w-50" target="_blank" href="<%= @use_case.ruby.documentation_url %>">Ruby: Learn More</a>
+        <a class="card__buttons--btn card__buttons--btn--green m-2 w-50" target="_blank" href="<%= @use_case.python.documentation_url %>">Python: Learn More</a>
       </div>
     </div>
-    <div class="card__buttons my-4">
-      <a class="card__buttons--btn card__buttons--btn--green m-2 w-50" target="_blank" href="<%= @use_case.ruby.documentation_url %>">Ruby: Learn More</a>
-      <a class="card__buttons--btn card__buttons--btn--green m-2 w-50" target="_blank" href="<%= @use_case.python.documentation_url %>">Python: Learn More</a>
+    <div class="m-5">
+      <% if (@use_case.id + 1) > @use_case_total.size %>
+        <%= link_to use_case_path(1) do %>
+          <i class="fas fa-chevron-right fa-3x card__icon"></i>
+        <% end %>
+      <% else %>
+        <%= link_to use_case_path(@use_case.id + 1) do %>
+          <i class="fas fa-chevron-right fa-3x card__icon"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

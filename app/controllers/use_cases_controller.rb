@@ -6,5 +6,6 @@ class UseCasesController < ApplicationController
 
   def show
     @use_case = UseCase.find(params[:id])
+    @use_case_total = UseCase.all
   end
 end

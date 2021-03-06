@@ -1,7 +1,15 @@
 .card {
   &-container {
+    margin: 8rem 6rem 4rem 6rem;
     padding: 2rem;
-    margin: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  &-content {
+    flex-grow: 1;
   }
 
   &-home-container {
@@ -52,6 +60,16 @@
     font-size: 0.8rem;
     color: black;
     font-weight: 300;
+  }
+
+  &__icon {
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  &__icon:hover {
+    color: $green;
+    opacity: 0.9;
   }
   
   &__buttons {
