@@ -3,6 +3,7 @@
     <a href="/"><%= image_tag asset_path('logo.png'), class: "mr-2 logo" %></a>
     <a href="/" class="mr-2 navbar__link--link m-2 <%= current_class?(root_path) %>">Home</a>
     <a href="/use_cases" class="mr-2 navbar__link--link m-2 <%= current_class?(use_cases_path) %>">Code</a>
+    <a href="/articles" class="mr-2 navbar__link--link m-2 <%= current_class?(articles_path) %>">Articles</a>
   </div>
   <div class="d-flex align-items-center">
     <%= form_tag search_results_path, class: "d-flex", method: :get do %>

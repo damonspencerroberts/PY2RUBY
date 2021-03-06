@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="index-use">
+    <div class="index-use__header">
+      <h1>Articles on Ruby & Python</h1>
+    </div>
+    <% @articles.each do |article| %>
+      <div class="card-product-article my-5 p-5">
+        <div class="card-product-article__content">
+          <h2><%= article.title %></h2>
+          <p><%= article.description[0, 139] %>...</p>
+          <p class="card-product-article__content--name">By <%= article.author %> (<%= article.time_length %>)</p>
+          <div class="card-product-article__btn w-25 mt-3">
+            <a target="_blank" href="<%= article.url %>">Read more</a>
+          </div>
+        </div>
+        <div class = "card-product-article--publish-btn m-3">
+          <div>
+            <p class="card-product-article__content--name border p-1 my-3"><%= article.category %></p>
+            <p class="card-product-article__content--name mt-4">Published <%= article.date %></p>
+          </div>
+        </div>
+        <div class="card-product-article__img">
+          <img class="avatar" src="<%= article.image_url %>" alt="avatar">
+        </div>
+      </div>
+    <% end %>
+    <div class="flickr_pagination">
+      <%= will_paginate @use_cases, :container => false %>
+    </div>
+  </div>
+</div>
