@@ -41,6 +41,10 @@
     }
   }
 
+  .moon-icon {
+    color: $night-mode-disabled;
+  } 
+
   .footer {
     background: $night-mode-text;
     color: $night-mode-disabled;
