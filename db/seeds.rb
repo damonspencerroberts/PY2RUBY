@@ -155,6 +155,12 @@ python_cases = [
       'int(bin(x)[2:])'
     ],
     documentation_url: "https://stackoverflow.com/questions/3528146/convert-decimal-to-binary-in-python"
+  },
+  {
+    code: [
+      'sum([1,2,3,4,5])'
+    ],
+    documentation_url: "https://www.geeksforgeeks.org/sum-function-python/"
   }
 ]
 
@@ -307,6 +313,12 @@ ruby_cases = [
       'x.to_s(2)'
     ],
     documentation_url: "https://stackoverflow.com/questions/2339695/how-to-convert-a-string-or-integer-to-binary-in-ruby"
+  },
+  {
+    code: [
+      '[1, 2, 3, 4, 5].sum'
+    ],
+    documentation_url: "https://apidock.com/ruby/Array/sum"
   }
 ]
 
@@ -494,6 +506,12 @@ use_cases = [
     description: "This method takes an argument of an integer and returns its binary value.",
     category: "integer",
     output: "100001"
+  },
+  {
+    title: "How to sum all the elements of an array",
+    description: "This method takes takes all the elements inside an array/list and returns the sum.",
+    category: "array",
+    output: "15"
   }
 ]
 
