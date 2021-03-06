@@ -42,28 +42,20 @@
             </p>
           </div>
           <div class="card__snippet py-2">
-            <div class="card__snippet--code">
+            <pre class="ruby-style">
               <% caser.ruby.code.each do |rb| %>
-                <p>
-                  <code>
-                    <%= rb %>
-                  </code>
-                </p>
+                <%= sanitize rb %>
               <% end %>
               <p class="card__snippet--code--def">Ruby</p>
-            </div>
+            </pre>
           </div>
           <div class="card__snippet py-2">
-            <div class="card__snippet--code">
+            <pre class="python-style">
               <% caser.python.code.each do |py| %>
-                <p>
-                  <code class="text-success">
-                    <%= py %>
-                  </code>
-                </p>
+                <%= sanitize py %>
               <% end %>
               <p class="card__snippet--code--def">Python</p>
-            </div>
+            </pre>
           </div>
           <div class="card__output">
             <div class="card__output--code">

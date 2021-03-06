@@ -1,12 +1,11 @@
 .card {
   &-container {
     padding: 2rem;
-    margin: 3rem 12rem;
+    margin: 3rem 4rem;
   }
 
   &-home-container {
     padding: 2rem;
-    margin: 3rem 3rem;
   }
   
   &__sub-info {
@@ -29,20 +28,13 @@
     font-weight: lighter;
     color: $gray;
   }
-  
-  &__snippet--code {
-    background-color: black;
-    border-radius: $border-radius;
-    padding: 2rem;
-    position: relative;
-  }
 
   &__snippet--code--def {
     position: absolute;
     top: 5px;
-    right: 10px;
+    left: 10px;
     font-size: 0.8rem;
-    color: $gray;
+    color: white;
     font-weight: 300;
   }
 
@@ -112,7 +104,7 @@
   }
   
   &__buttons--btn:hover::after {
-    transform: scaleX(1.1) scaleY(1.02);
+    transform: scaleX(1.05) scaleY(1.02);
     opacity: 0;
   }
   

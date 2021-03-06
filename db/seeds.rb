@@ -398,7 +398,7 @@ use_cases.each_with_index do |use_case, index|
   new_case.save
 end
 
-[20,10,4].each do |id|
+[26,10,4].each do |id|
   cur = UseCase.find(id)
   cur.update(popular: true)
   cur.save
