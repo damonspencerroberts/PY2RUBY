@@ -114,8 +114,47 @@ python_cases = [
     documentation_url: "https://www.geeksforgeeks.org/floor-ceil-function-python/"
   },
   {
-    code: ['x = 7', 'if x > 3:', "\treturn 'Greater than 3'", 'else:', "\treturn 'Less that 3'"],
+    code: [
+      'x = 7', 
+      'if x > 3:', 
+      "\treturn 'Greater than 3'", 
+      'else:', 
+      "\treturn 'Less that 3'"
+    ],
     documentation_url: "https://www.programiz.com/python-programming/if-elif-else"
+  },
+  {
+    code: [
+      'x = 2', 
+      'if x > 3:', 
+      "\treturn 'Greater than 3'", 
+      'elif x >= 0:', 
+      "\treturn 'Between 0 and 3'", 'else:', 
+      "\treturn 'Less that 3'"
+    ],
+    documentation_url: "https://www.programiz.com/python-programming/if-elif-else"
+  },
+  {
+    code: [
+      'def add(a, b):',
+      "\treturn a + b",
+      'add(5, 10)'
+    ],
+    documentation_url: "https://www.programiz.com/python-programming/function"
+  },
+  {
+    code: [
+      'my_array = [1, 1, 2, 3, 4, 5, 5]',
+      'list(set(my_array))'
+    ],
+    documentation_url: "https://www.geeksforgeeks.org/python-set-method/"
+  },
+  {
+    code: [
+      'x = 33',
+      'int(bin(x)[2:])'
+    ],
+    documentation_url: "https://stackoverflow.com/questions/3528146/convert-decimal-to-binary-in-python"
   }
 ]
 
@@ -223,12 +262,57 @@ ruby_cases = [
     documentation_url: "https://stackoverflow.com/questions/39971830/ruby-ceil-and-floor"
   },
   {
-    code: ['x = 7', 'if x > 3', "\t'Greater than 3'", 'else', "\t'Less than 3'", 'end'],
+    code: [
+      'x = 7', 
+      'if x > 3', 
+      "\t'Greater than 3'", 
+      'else', 
+      "\t'Less than 3'", 
+      'end'
+    ],
     documentation_url: "https://www.educative.io/edpresso/how-to-write-an-if-else-condition-in-ruby"
+  },
+  {
+    code: [
+      'x = 2', 
+      'if x > 3', 
+      "\t'Greater than 3'", 
+      'elsif x >= 0', 
+      "\t'Between 0 and 3'", 
+      'else', 
+      "\t'Less than 0'", 
+      'end'
+    ],
+    documentation_url: "https://www.educative.io/edpresso/how-to-write-an-if-else-condition-in-ruby"
+  },
+  {
+    code: [
+      'def add(a, b)',
+      "\ta + b",
+      'end',
+      'add(5, 10)'
+    ],
+    documentation_url: "https://www.howtogeek.com/howto/programming/ruby/ruby-function-method-syntax/"
+  },
+  {
+    code: [
+      'my_array = [1, 1, 2, 3, 4, 5, 5]',
+      'my_array.uniq'
+    ],
+    documentation_url: "https://www.rubyguides.com/2019/08/ruby-uniq-method/"
+  },
+  {
+    code: [
+      'x = 33',
+      'x.to_s(2)'
+    ],
+    documentation_url: "https://stackoverflow.com/questions/2339695/how-to-convert-a-string-or-integer-to-binary-in-ruby"
   }
 ]
 
 puts "Ruby Size: #{ruby_cases.size}"
+
+py_tab = "(Tabs are required for python.)"
 
 use_cases = [
   {
@@ -383,9 +467,33 @@ use_cases = [
   },
   {
     title: "Write a conditional statement",
-    description: "Uses the if else statement to return an element if a condition is met of not. (Tabs are required for python.)",
+    description: "Uses the if else statement to return an element if a condition is met of not. #{py_tab}",
     category: "conditional",
     output: "Greater than 3"
+  },
+  {
+    title: "Write a conditional statement with mulitple conditions",
+    description: "Conditional statement with multiple conditions to return an element if one of the conditions is met. #{py_tab}",
+    category: "conditional",
+    output: "Between 0 and 3"
+  },
+  {
+    title: "Writing a simple function for addition",
+    description: "How to write a simple function that takes two arguments a and b and returns the sum of them. #{py_tab}",
+    category: "function",
+    output: "15"
+  },
+  {
+    title: "How to remove duplicates from an array",
+    description: "This method takes an argument of an array/list and returns the array while removing all duplicate records.",
+    category: "array",
+    output: "[1, 2, 3, 4, 5]"
+  },
+  {
+    title: "How to convert an integer to binary",
+    description: "This method takes an argument of an integer and returns its binary value.",
+    category: "integer",
+    output: "100001"
   }
 ]
 
@@ -400,7 +508,7 @@ use_cases.each_with_index do |use_case, index|
   new_case.save
 end
 
-[26,10,4].each do |id|
+[28, 26, 10].each do |id|
   cur = UseCase.find(id)
   cur.update(popular: true)
   cur.save
